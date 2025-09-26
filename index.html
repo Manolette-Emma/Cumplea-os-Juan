@@ -218,7 +218,7 @@
             const summaryText = mission.summary
                 .replace(/\${guestName}/g, guestName)
                 .replace(/\${hostName}/g, hostName);
-
+            
             return `
                 <p><strong>ORDEN ESTÁNDAR No. ${mission.number} (${mission.title})</strong></p>
                 <p class="mt-2"><strong>Portador Asignado:</strong> ${guestName}</p>
@@ -229,7 +229,7 @@
 
         const generateMission = () => {
             const guestName = guestNameInput.value.trim();
-            if (!guestName) {
+            if (!guestName || null) {
                 missionOutput.innerHTML = '<p class="text-red-500">ERROR: Falla en el terminal. Ingrese el Nombre del Portador Asignado.</p>';
                 return;
             }
