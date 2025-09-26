@@ -211,7 +211,7 @@
         // --- FIN DE LISTA DE MISIONES ---
 
         const getRandomMission = (name) => {
-            const guestName = name || "[Nombre del Portador]";
+            const guestName = name || null;
             const randomIndex = Math.floor(Math.random() * missions.length);
             const mission = missions[randomIndex];
 
