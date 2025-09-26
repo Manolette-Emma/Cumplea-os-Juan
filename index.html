@@ -1,11 +1,254 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación a la Conexión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+       	 font-family: 'Inter', sans-serif;
+       	 background-color: #000000;
+       	 color: #ffffff;
+       	 /* CORRECCIÓN: Se ELIMINA 'overflow: hidden;' para permitir el scroll de la página */
+      	  /* --- Código de Fondo de Pantalla --- */
+     	   background-image: url('https://i.imgur.com/bCI0uXT.jpeg');
+      	  background-size: cover; 
+      	  background-position: center; 
+       	 background-repeat: no-repeat; 
+       	 background-attachment: fixed; 
+        /* --- Fin del Código de Fondo de Pantalla --- */
+ 	}
+        .text-neon-yellow {
+            color: #FFD166;
+        }
+        .bg-neon-yellow {
+            background-color: #FFD166;
+        }
+        .border-neon-yellow {
+            border-color: #FFD166;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #FFD166;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .glitch {
+            position: relative;
+        }
+        .glitch:before,
+        .glitch:after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            overflow: hidden;
+        }
+        .glitch:before {
+            left: 2px;
+            text-shadow: -2px 0 #118AB2;
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+        .glitch:after {
+            left: -2px;
+            text-shadow: -2px 0 #FF6B6B;
+            animation: glitch-anim-2 2s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim-1 {
+            0% { clip-path: inset(34% 0 35% 0); }
+            20% { clip-path: inset(55% 0 10% 0); }
+            40% { clip-path: inset(21% 0 45% 0); }
+            60% { clip-path: inset(67% 0 10% 0); }
+            80% { clip-path: inset(41% 0 20% 0); }
+            100% { clip-path: inset(15% 0 65% 0); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip-path: inset(80% 0 5% 0); }
+            20% { clip-path: inset(25% 0 40% 0); }
+            40% { clip-path: inset(5% 0 90% 0); }
+            60% { clip-path: inset(70% 0 10% 0); }
+            80% { clip-path: inset(45% 0 30% 0); }
+            100% { clip-path: inset(20% 0 55% 0); }
+        }
+    </style>
 </head>
-<body>
-  <span>hola</span>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+    <div style="background-color: rgba(0, 0, 0, 0.3)" class="relative w-full max-w-sm md:max-w-xl mx-auto rounded-xl shadow-2xl overflow-hidden border border-neon-yellow p-6 md:p-10" >
+        
+        <div class="absolute top-2 left-2 flex items-center space-x-2">
+            <div class="dot"></div>
+            <span class="text-xs uppercase tracking-wide text-neon-yellow">Conectando...</span>
+        </div>
+
+        <div class="text-center mt-8 mb-6">
+            <h1 class="text-2xl md:text-3xl font-black uppercase tracking-wider glitch" data-text="Alerta de Entrega">Alerta de Entrega</h1>
+        </div>
+
+        <div class="text-center my-4">
+            <p class="text-xs uppercase tracking-widest text-gray-400">Mensaje de Misión: Conexión de Cumpleaños</p>
+        </div>
+
+        <div class="border-t border-b border-gray-700 py-6 my-6">
+            <div class="mb-4">
+                <p class="text-sm uppercase text-neon-yellow tracking-widest">Nombre del Portador (Anfitrión):</p>
+                <p class="text-xl md:text-2xl mt-1 font-bold">Juan P. Gómez</p>
+            </div>
+            <div class="mb-4">
+                <p class="text-sm uppercase text-neon-yellow tracking-widest">Detalles de Entrega:</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center text-sm md:text-base">
+                <div class="p-3 border border-gray-700 rounded-lg">
+                    <span class="text-neon-yellow block mb-1">Fecha de Activacion del Knot</span>
+                    <span>[Día/Mes/Año]</span> 
+                </div>
+                <div class="p-3 border border-gray-700 rounded-lg">
+                    <span class="text-neon-yellow block mb-1">Hora del Evento de la Conexion</span>
+                    <span>[HH:MM]</span>
+                </div>
+                <div class="p-3 border border-gray-700 rounded-lg">
+                    <span class="text-neon-yellow block mb-1">Ubicación del Refugio</span>
+                    <span>[Dirección o Link]</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mb-6">
+            <p class="text-sm md:text-base text-gray-400">Tu presencia es vital para la estabilidad de la Red Quiral. Por favor, confirma tu asistencia para que podamos planear los detalles.</p>
+        </div>
+
+        <div class="text-center">
+            <p class="text-sm uppercase tracking-widest text-neon-yellow">Keep on keeping on.</p>
+        </div>
+
+        <div class="flex flex-col items-center mt-6">
+            <p class="text-sm md:text-base text-gray-400 mb-2">Generar Mensaje de Misión:</p>
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2 w-full">
+                <input id="guestNameInput" type="text" placeholder="Nombre del Portador Asignado (Invitado)" class="flex-grow p-2 rounded-md bg-gray-800 text-gray-200 border border-gray-700 focus:outline-none focus:border-neon-yellow placeholder-gray-500 text-sm"/>
+                <button id="generateMissionBtn" class="bg-neon-yellow text-black px-4 py-2 rounded-md font-bold text-sm hover:bg-yellow-400 transition duration-300 w-full sm:w-auto">
+                    Generar Misión ✨
+                </button>
+            </div>
+            <div id="missionOutput" class="mt-4 p-4 rounded-lg bg-gray-800 text-gray-300 text-sm overflow-y-auto max-h-40 w-full">
+                </div>
+        </div>
+
+        <div class="absolute bottom-2 right-2 text-xs uppercase text-gray-600">
+            BB Status: OK
+        </div>
+    </div>
+
+    <script>
+        const generateMissionBtn = document.getElementById('generateMissionBtn');
+        const guestNameInput = document.getElementById('guestNameInput');
+        const missionOutput = document.getElementById('missionOutput');
+        
+        const hostName = "Juan P. Gómez";
+
+        // --- LISTA DE 40 MISIONES PLANTILLA (LOCAL) ---
+        const missions = [
+            // Misiones 1-10: Estabilización y Refuerzo Social
+            { number: "01-A", title: "Estabilización del Flujo Quiral", cargo: "Unidad de Interacción Recíproca (Categoría: Social)", summary: `El Portador \${guestName} debe proceder al refugio de \${hostName} para reforzar el nodo de la Red Quiral. Su misión es la transferencia de Likes y la regeneración de lazos sociales. Fracasar podría llevar a una desconexión crítica.` },
+            { number: "02-B", title: "Ruta de Reabastecimiento de Moral", cargo: "Carga Frágil: Paquete de Celebración (Categoría: Fiestas)", summary: `Se requiere que \${guestName} complete una entrega vital de suministros a la zona del nudo. Esta entrega debe garantizar el máximo impacto positivo contra el Timefall emocional.` },
+            { number: "03-C", title: "Recuperación del Hilario Perdido", cargo: "Dispositivo de Humor Táctico (Categoría: Diversión)", summary: `El nudo de \${hostName} ha reportado una baja en los niveles de humor. \${guestName} debe transportar y activar el dispositivo de humor para restablecer la moral de la Red Quiral.` },
+            { number: "04-D", title: "Calibración de Enlace de Afinidad", cargo: "Componentes de Afinidad (Categoría: Personal)", summary: `Misión de alta prioridad. \${guestName} debe asegurar un enlace de afinidad con \${hostName} y otros Portadores. La socialización activa es obligatoria.` },
+            { number: "05-E", title: "Neutralización de Timefall Localizado", cargo: "Protección Climática Reforzada (Categoría: Regalo)", summary: `El Timefall está afectando el punto de conexión de \${hostName}. \${guestName} debe entregar un paquete de protección contra el desgaste.` },
+            { number: "06-F", title: "Transferencia de Materiales Desgastados", cargo: "Mensaje de Aprecio (Categoría: Verbal)", summary: `Se ordena a \${guestName} que utilice unidades de comunicación verbal para validar el trabajo de \${hostName}. El reconocimiento es un componente esencial.` },
+            { number: "07-G", title: "Transmisión de Ecos Positivos", cargo: "Fuente de Energía Quirales (Categoría: Comida/Bebida)", summary: `Para evitar el agotamiento de energía, \${guestName} debe asegurar la entrega de fuentes de combustible al Refugio de \${hostName}.` },
+            { number: "08-H", title: "Soporte de Conexión Asíncrona", cargo: "Memorias Compartidas (Categoría: Relacional)", summary: `El objetivo es la transferencia de recuerdos positivos al nudo de \${hostName}. \${guestName} debe interactuar para solidificar los enlaces.` },
+            { number: "09-I", title: "Optimización de Ancho de Banda Emocional", cargo: "Atención y Presencia (Categoría: Inmaterial)", summary: `Se requiere que \${guestName} se presente a la hora designada para maximizar la concurrencia de Portadores. La presencia es la moneda más valiosa.` },
+            { number: "10-J", title: "Entrega de Componente 'Happy Birthday'", cargo: "Datos de Celebración (Categoría: Multimedia)", summary: `El Portador \${guestName} deberá llevar y activar cualquier componente que aumente la atmósfera de celebración en el refugio de \${hostName}.` },
+            
+            // Misiones 11-20: Refuerzo y Aprovisionamiento
+            { number: "11-A", title: "Refuerzo del Nudo Central", cargo: "Paquete de Estabilización (Categoría: Regalo Personal)", summary: `El nudo principal, \${hostName}, necesita refuerzo. \${guestName} debe entregar la carga de apoyo para asegurar que el nudo permanezca funcional y feliz por otro ciclo.` },
+            { number: "12-B", title: "Ruta de Suministro de Cepa de Éxito", cargo: "Unidades de Reconocimiento (Categoría: Verbal)", summary: `Misión para \${guestName}: Transporte de unidades de reconocimiento para validar la trayectoria de \${hostName}. Esta entrega debe ser oral y auténtica.` },
+            { number: "13-C", title: "Mapeo de Rutas Seguras de Interacción", cargo: "Conversación de Bajo Riesgo (Categoría: Protocolo)", summary: `Se le asigna a \${guestName} la tarea de iniciar y mantener conversaciones seguras y agradables. Esto establecerá rutas sociales claras.` },
+            { number: "14-D", title: "Prevención de Desgaste por Timefall", cargo: "Componentes de Distracción (Categoría: Entretenimiento)", summary: `\${guestName} debe llevar consigo elementos de distracción para combatir el efecto corrosivo del Timefall. Su tarea es mantener el ambiente de alegría.` },
+            { number: "15-E", title: "Activación de Enlace Q.S. (Quiral-Social)", cargo: "Energía Positiva Concentrada (Categoría: Animo)", summary: `Misión para \${guestName}: Activar el enlace Q.S. con la mayor energía posible. El objetivo es una inyección de ánimo en el Refugio de \${hostName}.` },
+            { number: "16-F", title: "Entrega de Materiales de Construcción", cargo: "Ladrillos de Amistad (Categoría: Fuerte)", summary: `El Portador \${guestName} tiene la orden de transportar y aplicar 'Ladrillos de Amistad' para reconstruir cualquier segmento débil en la estructura social alrededor de \${hostName}.` },
+            { number: "17-G", title: "Protocolo Anti-BT Social", cargo: "Voz Activa (Categoría: Ruido)", summary: `Para disipar cualquier presencia de BT (Beached Things), \${guestName} debe mantener una comunicación constante. El silencio social es un peligro.` },
+            { number: "18-H", title: "Conexión de Nodo de Influencia", cargo: "Afecto Personalizado (Categoría: Único)", summary: `Se le encarga a \${guestName} una entrega de afecto personalizado a \${hostName}. Esta carga es irremplazable y vital para el bienestar del nudo.` },
+            { number: "19-I", title: "Análisis de Estabilidad Psicológica", cargo: "Reporte de Experiencias (Categoría: Histórico)", summary: `\${guestName} debe llevar un informe de buenas experiencias y compartirlas con \${hostName} para asegurar su estabilidad psicológica. La moral del nudo es prioridad.` },
+            { number: "20-J", title: "Ruta de Aprovisionamiento de Vínculos", cargo: "Cuerdas y Escaleras (Categoría: Ayuda)", summary: `Misión de \${guestName}: Transportar y desplegar 'Cuerdas y Escaleras' sociales para ayudar a \${hostName} a superar el nuevo año de desafíos. Keep on keeping on.` },
+
+            // Misiones 21-30: Reconexión y Logística
+            { number: "21-A", title: "Entrega Urgente: Componentes de Gozo", cargo: "Paquete de Celebración Nivel 5 (Categoría: Lujoso)", summary: `El Portador \${guestName} debe garantizar que los componentes de gozo lleguen intactos. Esta es una entrega urgente para la celebración de \${hostName}.` },
+            { number: "22-B", title: "Protocolo de Reciprocidad de Likes", cargo: "Aprobación y Apoyo (Categoría: Inmaterial)", summary: `Se instruye a \${guestName} a participar activamente en el intercambio de 'Likes'. El nudo de \${hostName} depende de un alto flujo de reciprocidad para su energía Quirales.` },
+            { number: "23-C", title: "Inyección de Factor 'Día del Nacimiento'", cargo: "Regalo Temático (Categoría: Personal)", summary: `\${guestName} tiene la tarea de inyectar el factor de 'Día del Nacimiento' al entorno de \${hostName}. El paquete de carga es un catalizador para la alegría colectiva.` },
+            { number: "24-D", title: "Logística de Consumo Energético", cargo: "Suministros de Consumo (Categoría: Comida/Bebida)", summary: `Misión para \${guestName}: Asegurar la correcta entrega de suministros de alto consumo energético en el Refugio de \${hostName}.` },
+            { number: "25-E", title: "Reunión de Enlaces Dispersos", cargo: "Mensaje de Convocatoria (Categoría: Verbal)", summary: `\${guestName} actuará como un sub-conectador, asegurando que todos los enlaces estén al tanto de la conexión de \${hostName}.` },
+            { number: "26-F", title: "Entrega de Materiales de Apoyo", cargo: "Ayuda Logística (Categoría: Práctico)", summary: `Se requiere que \${guestName} proporcione cualquier ayuda logística que \${hostName} necesite. El apoyo práctico es tan vital como la conexión emocional.` },
+            { number: "27-G", title: "Reconexión del Nudo Personal", cargo: "Presencia Sólida (Categoría: Prioritaria)", summary: `La misión de \${guestName} es simplemente estar presente. La reconexión con \${hostName} es el objetivo principal de esta operación de alta sensibilidad.` },
+            { number: "28-H", title: "Desactivación de Estrés Post-Conexión", cargo: "Relajación Táctica (Categoría: Calma)", summary: `El Portador \${guestName} está asignado a proporcionar una atmósfera de relajación en el refugio de \${hostName}. El objetivo es reducir el estrés y aumentar la longevidad del nudo.` },
+            { number: "29-I", title: "Transmisión de Código de Amistad", cargo: "Símbolo de Amistad (Categoría: Único)", summary: `\${guestName} debe transferir un símbolo de amistad, que sirve como un código de seguridad para la Red Quiral de \${hostName}. Es una entrega de confianza mutua.` },
+            { number: "30-J", title: "Aseguramiento de la Zona de Evento", cargo: "Interacción Vigilante (Categoría: Social)", summary: `Se le ordena a \${guestName} asegurar que el área de evento esté libre de cualquier elemento negativo. La interacción social vigilante es necesaria para el éxito.` },
+            
+            // Misiones 31-40: Misiones Críticas y Únicas
+            { number: "31-A", title: "Entrega de Componente Crítico 'Felicidad'", cargo: "Felicidad Concentrada (Categoría: Extremadamente Frágil)", summary: `Advertencia: La carga es crítica. \${guestName} debe manejar el componente 'Felicidad' con el máximo cuidado y entregarlo sin Timefall al nudo de \${hostName}.` },
+            { number: "32-B", title: "Protocolo de Intercambio de Regalos (P.I.R.)", cargo: "Paquete de Reconocimiento (Categoría: Sellado)", summary: `El P.I.R. ha sido activado. \${guestName} tiene una carga sellada para \${hostName}. La entrega debe ser directa y sin intermediarios. La reciprocidad es esencial.` },
+            { number: "33-C", title: "Misión de Reconstrucción de Lazos", cargo: "Materiales de Unión (Categoría: Fuerte)", summary: `\${guestName} está autorizado a utilizar todos los medios necesarios para fortalecer los lazos en el refugio de \${hostName}. Esta es una tarea de ingeniería social.` },
+            { number: "34-D", title: "Soporte Vital Básico para Portador", cargo: "Alimentos y Bebidas (Categoría: Vital)", summary: `El soporte vital de \${hostName} depende de esta entrega. \${guestName} debe asegurar que el nudo tenga suficientes provisiones para la duración del evento.` },
+            { number: "35-E", title: "Despliegue de Unidad de Celebración", cargo: "Unidad Autónoma de Festejo (Categoría: Grande)", summary: `Misión de alta complejidad. \${guestName} debe desplegar la Unidad Autónoma de Festejo en el punto de encuentro, garantizando la diversión continua.` },
+            { number: "36-F", title: "Ruta de Evacuación de Negatividad", cargo: "Filtradores de Ambiente (Categoría: Ambiental)", summary: `\${guestName} debe actuar como un agente de limpieza, eliminando cualquier rastro de pesimismo o negatividad del entorno de \${hostName}.` },
+            { number: "37-G", title: "Conexión de Micro-Nodos Personales", cargo: "Historias y Anécdotas (Categoría: Narrativa)", summary: `Para fortalecer la Red Quiral, \${guestName} debe conectar micro-nodos, compartiendo historias y anécdotas con \${hostName} y otros Portadores.` },
+            { number: "38-H", title: "Transmisión de Gratitud Crítica", cargo: "Mensaje de Agradecimiento (Categoría: Inmaterial, Prioridad 1)", summary: `Se le asigna a \${guestName} la tarea de transmitir un mensaje de gratitud de alta criticidad a \${hostName}. La recepción y acuse de recibo de este mensaje es vital.` },
+            { number: "39-I", title: "Protocolo de Interacción de Alto Riesgo", cargo: "Juegos y Dinámicas (Categoría: Interactivo)", summary: `El riesgo es la aburrimiento. \${guestName} está autorizado a introducir elementos interactivos (juegos) en el refugio de \${hostName} para mantener la Red en funcionamiento óptimo.` },
+            { number: "40-J", title: "Activación del Lazo Definitivo", cargo: "Lazo de Conexión (Categoría: Irrompible)", summary: `La misión final de \${guestName} es activar un lazo de conexión irrompible con \${hostName}. Esta conexión garantiza que el nudo resista el paso de un año más de Timefall. Sigue adelante.` }
+        ];
+        // --- FIN DE LISTA DE MISIONES ---
+
+        const getRandomMission = (name) => {
+            const guestName = name || "[Nombre del Portador]";
+            const randomIndex = Math.floor(Math.random() * missions.length);
+            const mission = missions[randomIndex];
+
+            const summaryText = mission.summary
+                .replace(/\${guestName}/g, guestName)
+                .replace(/\${hostName}/g, hostName);
+
+            return `
+                <p><strong>ORDEN ESTÁNDAR No. ${mission.number} (${mission.title})</strong></p>
+                <p class="mt-2"><strong>Portador Asignado:</strong> ${guestName}</p>
+                <p><strong>Carga:</strong> ${mission.cargo}</p>
+                <p class="mt-2"><strong>Resumen:</strong> ${summaryText}</p>
+            `;
+        };
+
+        const generateMission = () => {
+            const guestName = guestNameInput.value.trim();
+            if (!guestName) {
+                missionOutput.innerHTML = '<p class="text-red-500">ERROR: Falla en el terminal. Ingrese el Nombre del Portador Asignado.</p>';
+                return;
+            }
+
+            missionOutput.innerHTML = '<p class="text-neon-yellow animate-pulse">Generando Orden de Misión...</p>';
+            
+            // Simula un breve tiempo de "carga" para el efecto glitch/connecting
+            setTimeout(() => {
+                missionOutput.innerHTML = getRandomMission(guestName);
+            }, 500);
+        };
+
+        // Asigna un mensaje de misión aleatorio al cargar la página (con placeholder)
+        document.addEventListener('DOMContentLoaded', () => {
+            missionOutput.innerHTML = getRandomMission(null);
+        });
+
+        generateMissionBtn.addEventListener('click', generateMission);
+
+    </script>
 </body>
 </html>
